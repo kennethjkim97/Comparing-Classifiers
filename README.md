@@ -40,3 +40,24 @@ Keep in mind LinearSVC is utilized for SVM, normal SVC() times out during execut
 Analyzing the results, it seems that **Decision Tree** is the best model to use. With the highest F1 scoreof round 0.38, it would be the best model to find likely subscribers to the term deposit. However, training time is the second worst out of the 4 coming in at around 21 seconds. Additionally, due to the nature of decision trees, it can be unstable with data changes and interpretability is at the mercy of the simplicity of rules.
 
 ### Logistic Regression
+Logistic Regression suffers from lower F1 score (around 0.34) which is not ideal for identifying potential subscribers. However, training time is the second best out of the four models and it is very stable. I believe this would also be a good choice due to its stability and high interpretability. However, Logistic Regression by its nature assumes linear relationships and may miss more complex patterns.
+
+### KNN
+KNN may not be recommended. Training time is dramatically higher than the other models by a wide margin. However, F1 score is second highest only beaten by decision trees. So in this case, a tradeoff between accuracy and time consideration needs to be taken into account. Overall, I would not recommend KNN due to its weakness to imbalanced data, sensitivity to scaling and very memory-intensive compute time which to a non-technical stakeholder I would imagine does not sound ideal.
+
+### LinearSVC
+Linear SVC may also not be recommended. It has the lowest F1 score which right away identifies itself as the worst model in regards to precision in predicting the best potential subscribers. However, training time is extremely good at only 4 seconds. Additionally, inherent characteristics of this model gives benefits such as robustness to outliers and high scalability while suffering from less interpretability compare to Logistic Regression. Overall, I would still not recommend Linear SVC due to its very poor performance in accuracy which I would say is more important than training time.
+
+### Top Features
+Below is a bar chart of the top 10 feature importances derived from the Decision Tree
+<img width="827" height="495" alt="image" src="https://github.com/user-attachments/assets/df31756f-5672-4a5e-ab26-0729c3e8ca70" />
+
+## Conclusion
+In conclusion, the best model to use would be Decision Tree for the best results regarding predictive accuracy, which is most important overall. In addition, Logistic Regression may also be a good choice for baseline explanation and interpretability to non-technical stakeholders. Although, this alternative will not be the best choice in terms of precision in identifying potential subscribers.
+
+Some actionable insights include:
+*   Call clients when the job market is strong (high number of employed from quarterly indicators)
+*   Call clients not too long after the previous call. The call will be more successful the sooner the client is contacted again.
+*   Call clients when euribor rates are low
+*   Call clients who are middle-aged to senior citizens
+*   Call clients in the month of October. This is the best time for the best potential for subscriptions.
