@@ -24,6 +24,7 @@ Additionally, a basic model built via Logistic Regression also gives an accuracy
 
 ### Model Comparisons
 Now, we aim to compare the performance of the Logistic Regression model to our KNN algorithm, Decision Tree, and SVM models.  Using the default settings for each of the models, we fit and score each.  Also, we compare the fit time of each of the models:
+
 <img width="406" height="128" alt="image" src="https://github.com/user-attachments/assets/e838780f-8a72-4fe7-90b0-792abf9192c7" />
 
 ### Improving the Model
